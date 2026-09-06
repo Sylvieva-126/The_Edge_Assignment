@@ -2,8 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../Styles/signin.css";
 import Logo from "../Components/Logo";
-
-const credentialsStorageKey = "signupCredentials";
+import { credentialsStorageKey, hashValue, normalizeEmail } from "../utils/credentials";
 
 const SigninPage = () => {
   const navigate = useNavigate();
@@ -16,7 +15,7 @@ const SigninPage = () => {
     setErrorMessage("");
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const storedCredentials = localStorage.getItem(credentialsStorageKey);
@@ -33,8 +32,15 @@ const SigninPage = () => {
       return;
     }
 
-    const emailMatches = savedAccount.email === credentials.email.trim().toLowerCase();
-    const passwordMatches = savedAccount.password === credentials.password;
+    if (!savedAccount.emailHash || !savedAccount.passwordHash) {
+      setErrorMessage("Please sign up again to update your saved account securely.");
+      return;
+    }
+
+    const emailHash = await hashValue(normalizeEmail(credentials.email));
+    const passwordHash = await hashValue(credentials.password);
+    const emailMatches = savedAccount.emailHash === emailHash;
+    const passwordMatches = savedAccount.passwordHash === passwordHash;
 
     if (!emailMatches || !passwordMatches) {
       setErrorMessage("Incorrect email or password.");

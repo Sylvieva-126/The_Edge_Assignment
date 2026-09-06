@@ -1,0 +1,209 @@
+#signin-page-layout {
+    font-size: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#signin-page-layout {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+#signin-page-layout #logo-div {
+    background-color: #130B26;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    color: #FFF8E6;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.the, .edge {
+    font-family: 'Poppins', sans-serif;
+}
+
+.the {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 50px;
+}
+
+.edge {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 65px;
+    width: 175px;
+    height: 98px;
+}
+
+#signin-page-layout #signin-main-section {
+    background-color: #1B1035;
+    width: 55%;
+    height: 100vh;
+    color: #FFF8E6;
+}
+
+#signin-page-layout header {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5rem;
+    flex-direction: column;
+    height: 20vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+#signin-page-layout .signin-header-content {
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    flex-direction: column;
+}
+
+#signin-page-layout #signin-heading {
+    font-weight: 800;
+    font-size: 3rem;
+    color: #FFF8E6;
+    line-height: 1.2;
+    margin-bottom: 0.8rem;
+}
+
+#signin-page-layout #signin-subheading {
+    font-weight: 400;
+    font-size: 1.5rem;
+    text-align: left;
+}
+
+#signin-page-layout .signin-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 2.5rem;
+}
+
+#signin-page-layout .signin-form-element {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    padding: 0px 120px 0px 120px;
+}
+
+#signin-page-layout .signin-input-field {
+    width: 100%;
+    height: 4rem;
+    border-radius: 0.5rem;
+    border: none;
+    padding: 0.5rem;
+    background-color: #FFF8E6;
+}
+
+#signin-page-layout .signin-row-email, 
+#signin-page-layout .signin-row-password {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.6rem;
+    margin-bottom: 3rem;
+}
+
+#signin-page-layout .signin-input-group {
+    display: flex;
+    align-items: center;
+    background-color: #FFF8E6;
+    border-radius: 0.5rem;
+    height: 4rem;
+    width: 100%;
+    overflow: hidden; 
+}
+
+#signin-page-layout p {
+    font-size: 1rem;
+}
+
+#signin-page-layout .signin-error {
+    color: #FF6B6B;
+    font-size: 1.2rem;
+    margin-top: -1.5rem;
+}
+
+#signin-page-layout button {
+    background-color: #D9AB53;
+    color: #F6F1E3;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 0.5rem 2rem;
+    border-radius: 0.5rem;
+    height: 50px;
+    margin-top: 3rem;
+}
+
+#signin-page-layout .signin-row-options {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+#signin-page-layout .signin-submit-btn:hover {
+    opacity: 0.9;
+}
+
+#signin-page-layout .signin-submit-btn:active {
+    transform: scale(0.9);
+}
+
+a {
+    color: #D9AB53;
+}
+
+@media (max-width: 768px) {
+    #signin-page-layout {
+        flex-direction: column;
+    }
+    #signin-page-layout #logo-div {
+        width: 100%;
+        min-height: 25vh;
+        height: auto;
+        padding: 3rem 0;
+    }
+    #signin-page-layout #signin-main-section {
+        width: 100%;
+        height: auto;
+        min-height: 75vh;
+        padding: 4rem 0;
+    }
+    #signin-page-layout header {
+        height: auto;
+        padding: 0 2rem;
+        margin-bottom: 3rem;
+    }
+    #signin-page-layout .signin-header-content {
+        width: 100%;
+    }
+    #signin-page-layout .signin-form-element {
+        width: 100%;
+        padding: 0 2rem; 
+    }
+}
+

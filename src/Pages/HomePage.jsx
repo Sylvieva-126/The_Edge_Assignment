@@ -13,7 +13,7 @@ const Welcome = () => {
 
   const handleContinue = () => {
     if (selectedRole) {
-      navigate('/signin')
+      navigate('/signup')
     }
   }
 

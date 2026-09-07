@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-// If your CSS is scoped globally or imported in App.js, you don't need to import it here.
-// Otherwise, import "../styles/landingPage.css";
+
 
 const Navbar = () => {
   return (

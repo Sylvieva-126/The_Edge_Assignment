@@ -48,7 +48,16 @@ const SigninPage = () => {
     }
 
     setErrorMessage("");
-    navigate("/home");
+
+    const selectedRole = (() => {
+      try {
+        return JSON.parse(localStorage.getItem("selectedRole"));
+      } catch {
+        return null;
+      }
+    })();
+
+    navigate(selectedRole === "tutor" ? "/onboarding-1" : "/home");
   };
 
   return (

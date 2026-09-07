@@ -4,13 +4,19 @@ import Logo from '../Components/Logo'
 import '../Styles/homepage.css'
 
 const Welcome = () => {
-  const [selectedRole, setSelectedRole] = useState(null)
+  const [selectedRole, setSelectedRole] = useState(() => {
+  const savedRole = localStorage.getItem('selectedRole');
+  return savedRole ? JSON.parse(savedRole) : null;
+});
   const navigate = useNavigate()
 
-  const handleCardClick = (role) => {
-    setSelectedRole(role)
-  }
-
+ const handleCardClick = (role) => {
+  setSelectedRole(role);
+  
+  localStorage.setItem('selectedRole', JSON.stringify(role));
+  
+  console.log(role);
+};
   const handleContinue = () => {
     if (selectedRole) {
       navigate('/signup')

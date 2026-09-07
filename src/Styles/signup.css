@@ -135,7 +135,26 @@
 }
 
 #signup-page-layout .label-offset {
+  grid-column: 2;
   grid-row: 1;
+}
+
+#signup-page-layout .form-row-names label:first-of-type,
+#signup-page-layout .form-row-passwords label:first-of-type {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+#signup-page-layout .form-row-names input:nth-of-type(1),
+#signup-page-layout .form-row-passwords input:nth-of-type(1) {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+#signup-page-layout .form-row-names input:nth-of-type(2),
+#signup-page-layout .form-row-passwords input:nth-of-type(2) {
+  grid-column: 2;
+  grid-row: 2;
 }
 
 #signup-page-layout .input-field,
@@ -272,5 +291,29 @@
   #signup-page-layout .form-row-names,
   #signup-page-layout .form-row-passwords {
     grid-template-columns: 1fr;
+  }
+
+  #signup-page-layout .label-offset {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  #signup-page-layout .form-row-names label,
+  #signup-page-layout .form-row-passwords label,
+  #signup-page-layout .form-row-names input,
+  #signup-page-layout .form-row-passwords input {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}
+
+@media (min-width: 851px) and (max-height: 700px) {
+  #signup-page-layout {
+    align-items: stretch;
+  }
+
+  #signup-page-layout #logo-div {
+    height: auto;
+    min-height: 100vh;
   }
 }

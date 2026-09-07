@@ -26,15 +26,18 @@ const SignupPage = () => {
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    const nextValue = name === "phone" ? value.replace(/\D/g, "") : value;
+    const nextValue = name === "phone"
+      ? value.replace(/\D/g, "")
+      : name === "firstName" || name === "lastName"
+        ? value.replace(/[^A-Za-z]/g, "")
+        : value;
     setFormData((prev) => ({
       ...prev,
       [name]: type === "checkbox" ? checked : nextValue,
     }));
   };
 
-  const passwordsMatch = 
-    formData.password !== "" && formData.password === formData.confirmPassword;
+  const passwordsMatch = formData.password !== "" && formData.password === formData.confirmPassword;
   const passwordIsValid = passwordPattern.test(formData.password);
 
   const isFormValid =
@@ -52,6 +55,8 @@ const SignupPage = () => {
     if (!isFormValid) return;
 
     localStorage.setItem(credentialsStorageKey, JSON.stringify({
+      firstName: formData.firstName,
+      lastName: formData.lastName,
       emailHash: await hashValue(normalizeEmail(formData.email)),
       passwordHash: await hashValue(formData.password),
     }));
@@ -72,22 +77,28 @@ const SignupPage = () => {
         <div className="form-wrapper">
           <form className="signup-form" onSubmit={navToSignup}>
             <div className="form-row-names">
-              <label>Last Name</label>
+              <label htmlFor="firstName">First Name</label>
               <input
                 type="text"
-                name="lastName"
-                className="input-field"
-                value={formData.lastName}
-                onChange={handleChange}
-                required
-              />
-              <label className="label-offset">First Name</label>
-              <input
-                type="text"
+                id="firstName"
                 name="firstName"
                 className="input-field"
                 value={formData.firstName}
                 onChange={handleChange}
+                pattern="[A-Za-z]+"
+                title="First name must contain letters only."
+                required
+              />
+              <label htmlFor="lastName">Last Name</label>
+              <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                className="input-field"
+                value={formData.lastName}
+                onChange={handleChange}
+                pattern="[A-Za-z]+"
+                title="Last name must contain letters only."
                 required
               />
             </div>

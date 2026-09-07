@@ -141,7 +141,8 @@
 }
 
 #email-page-layout .message {
-    font-size: 1.4rem;
+    font-size: 0.8rem;
+    font-weight: 200;
     color: rgba(255, 248, 230, 0.7);
 }
 

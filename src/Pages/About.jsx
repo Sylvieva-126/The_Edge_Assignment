@@ -1,5 +1,5 @@
 import Footer from "../Components/Footer";
-import "../styles/about.css";
+import "../Styles/about.css";
 import Navbar from "../Components/NavBar";
 
 const About = () => {

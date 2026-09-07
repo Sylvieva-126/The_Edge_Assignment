@@ -60,7 +60,7 @@ const SignupPage = () => {
 
   return (
     <main id="signup-page-layout">
-      <Logo />
+      <Logo/>
       <section id="signup-main-section" className="container-child">
         <header>
           <div className="header-cnt">

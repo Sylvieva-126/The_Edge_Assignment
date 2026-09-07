@@ -3,6 +3,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
 }
 .welcome-page{
   display: flex;
@@ -10,24 +12,29 @@
   min-height: 100vh;
   width: 100%;
 }
-.welcome-page #logo{
+.welcome-page #logo-div{
   background-color: #0F0820;
   color: #F6F1E3;
-  font-family: sans-serif;
-  height: 100vh;
-  width: 45vw;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+     text-align: left;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  ;
 }
 .welcome-page #logo-container{
   text-align: left;
 }
-.welcome-page #logo-h1{
-  font-size: 5rem;
-  font-weight: 400;
+.welcome-page #logo-h3{
+      font-style: normal;
+  font-size: 2rem;
+  font-weight: 200;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
 }
 .welcome-page #logo-h2{
+      font-style: normal;
+
   font-size: 3rem;
   font-weight: 700;
 }
@@ -128,6 +135,7 @@
   font-weight: 600;
   cursor: pointer;
   border-radius: 0.5rem;
+  width:50%;
   transition: transform 0.1s ease-in-out;
 }
 .welcome-page button:hover{
